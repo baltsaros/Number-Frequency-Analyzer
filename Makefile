@@ -13,7 +13,7 @@ GCCFLAGS	= -Wall -Wextra -Werror
 
 NAME		= tracker
 
-SRCS		= main.cpp
+SRCS		= tracker.cpp
 
 OBJ_DIR		= objs
 OBJ_FILES	= $(SRCS:.cpp=.o)

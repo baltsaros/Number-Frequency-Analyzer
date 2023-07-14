@@ -51,13 +51,6 @@ void	showStatistics(map<int, int> data) {
 	}
 }
 
-int		findNum(int range, int random) {
-	int	num = random;
-	while (num >= range)
-		num = range;
-	return num;
-}
-
 int	main(int argc, char *argv[]) {
 	if (argc != 3) {
 		cout << "Error: Invalid number of parameters" << endl;
