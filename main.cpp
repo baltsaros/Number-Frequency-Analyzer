@@ -1,6 +1,10 @@
 #include <iostream> // printing
 #include <cstdlib> // srand(), time() and rand()
+#include <cmath> // for double rounding
 #include <map>
+
+#define NC "\e[0m"
+#define YLWB "\e[1;33m"
 
 using namespace std;
 int	a = 0;
@@ -22,15 +26,29 @@ int	parseParam(char *argv) {
 	}
 	int	num = atoi(argv);
 	if (num <= 0) {
-		exit(EXIT_FAILURE);
 		cout << "Error: Invalid parameter" << endl;
+		exit(EXIT_FAILURE);
 	}
 	return num;
 }
 
 void	printMap(map<int, int> data) {
+	cout << YLWB "\n+++ Results +++\n" NC;
 	for (map<int, int>::iterator it = data.begin(); it != data.end(); it++)
 		cout << it->first << ": " << it->second << endl;
+}
+
+void	showStatistics(map<int, int> data) {
+	double	sum = 0.0;
+	double	ratio;
+	cout << YLWB "\n+++ Results +++\n" NC;
+	for (map<int, int>::iterator it = data.begin(); it != data.end(); it++)
+		sum += it->second;
+	for (map<int, int>::iterator it = data.begin(); it != data.end(); it++) {
+		ratio = ((it->second * 100.0) / sum);
+		ratio = ceil(ratio * 100.0) / 100.0;
+		cout << it->first << ": " << it->second << " (" << ratio << "%)" << endl;
+	}
 }
 
 int		findNum(int range, int random) {
@@ -67,6 +85,7 @@ int	main(int argc, char *argv[]) {
 		}
 		it->second++;
 	}
-	printMap(data);
+	// printMap(data);
+	showStatistics(data);
 	return 0;
 }
