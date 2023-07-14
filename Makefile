@@ -11,7 +11,7 @@ RM			= rm -f
 RMF			= rm -rf
 GCCFLAGS	= -Wall -Wextra -Werror
 
-NAME		= distribFinder
+NAME		= tracker
 
 SRCS		= main.cpp
 
