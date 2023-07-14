@@ -3,6 +3,7 @@
 
 ## How to use
 * Provide two integers as input parameters: the range of numbers and the number of iterations
+> ./tracker [range] [iterations]
 * For example, the following input analyzes the frequency of numbers in the sequence from 0 till 4 (including) over 100 iterations:
 > 5 100
-
+> 
